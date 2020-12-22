@@ -1,5 +1,6 @@
 package algorithms.arrays;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,5 +17,9 @@ class TwoSum {
       set.add(num);
     }
     return new int[0];
+  }
+
+  public static void main(String[] args) {
+    System.out.println(Arrays.toString(twoNumberSum(new int[]{2,9,11,10}, 20)));
   }
 }
