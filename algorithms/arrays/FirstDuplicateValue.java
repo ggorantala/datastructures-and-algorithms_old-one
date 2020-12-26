@@ -42,8 +42,16 @@ public class FirstDuplicateValue {
     return -1;
   }
 
-  private static int findIndexFastest(int[] array){
+  private static int findIndexFastest(int[] array) {
+    for (int value : array) {
+      int absValue = Math.abs(value);
 
+      if (array[absValue - 1] < 0) {
+        return absValue;
+      }
+
+      array[absValue - 1] *= -1;
+    }
     return -1;
   }
 }
