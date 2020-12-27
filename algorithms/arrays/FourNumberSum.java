@@ -1,5 +1,6 @@
 package algorithms.arrays;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FourNumberSum {
@@ -12,5 +13,6 @@ public class FourNumberSum {
 
   private static List<Integer[]> fourNumberSum(int[] array, int targetSum) {
 
+    return new ArrayList<>();
   }
 }
