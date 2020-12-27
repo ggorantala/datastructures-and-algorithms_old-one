@@ -9,13 +9,13 @@ public class CorrectCapitalization {
   }
 
   private static boolean correctCapitalization(String str) {
-    int length = Character.isUpperCase(str.charAt(0)) ? 1 : 0;
+    int count = Character.isUpperCase(str.charAt(0)) ? 1 : 0;
 
     for (int i = 1; i < str.length(); i++) {
       if (Character.isUpperCase(str.charAt(i))) {
-        length++;
+        count++;
       }
     }
-    return length == 0 || length == str.length() || length == 1 && Character.isUpperCase(str.charAt(0));
+    return count == 0 || count == str.length() || count == 1 && Character.isUpperCase(str.charAt(0));
   }
 }
