@@ -7,6 +7,11 @@ public class VaccumCleanerRoute {
     System.out.println(vacuumReturnsToStart("RUULLDRD"));
   }
 
+  /**
+   * Runtime: O(N) where N is the number of moves the vacuum makes
+   * Space complexity: O(1) or constant as we only need a few variables to solve the problem regardless of the number
+   * of moves the vacuum makes
+   */
   private static boolean vacuumReturnsToStart(String str) {
     int up = 1;
     int down = -1;

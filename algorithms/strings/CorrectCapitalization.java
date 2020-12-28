@@ -8,7 +8,8 @@ public class CorrectCapitalization {
     System.out.println(correctCapitalization("coding"));
   }
 
-  // O(n) time and O(1) space
+  // Runtime: O(N) where N is the number of characters in our word
+  // Space complexity: O(1) or constant
   private static boolean correctCapitalization(String str) {
     int count = Character.isUpperCase(str.charAt(0)) ? 1 : 0;
 

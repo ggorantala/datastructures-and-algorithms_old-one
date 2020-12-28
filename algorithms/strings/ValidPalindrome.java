@@ -7,7 +7,13 @@ public class ValidPalindrome {
     System.out.println(isPalindrome("A man, a plan, a canal: Panama."));
   }
 
-  // Time = O(n) and Space = O(1)
+  /**
+   * Runtime: O(N) where N is the number of characters in the given string because we only traverse the string once
+   * (even though there are nested loops - don’t be fooled!).
+   *
+   * Space complexity: O(1) or constant as we only need couple variables to solve the problem (regardless of
+   * the size of the string)
+   */
   private static boolean isPalindrome(String str) {
     int i = 0;
     int j = str.length() - 1;
