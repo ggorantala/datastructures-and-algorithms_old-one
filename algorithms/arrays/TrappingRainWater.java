@@ -7,6 +7,7 @@ public class TrappingRainWater {
     System.out.println(trapWaterOptimal(heights));
   }
 
+  // O(n^2) time and O(1) space
   private static int trapWater(int[] heights) {
     int totalWater = 0;
     for (int p = 0; p < heights.length; p++) {
@@ -34,6 +35,7 @@ public class TrappingRainWater {
     return totalWater;
   }
 
+  //O(n) time and O(1) space
   private static int trapWaterOptimal(int[] heights) {
     int total = 0;
 
