@@ -2,13 +2,14 @@ package algorithms.arrays;
 
 public class TrappingRainWater {
   public static void main(String[] args) {
-    int[] array = {0, 1, 0, 2, 1, 0, 3, 1, 0, 1, 2};
-    System.out.println(trapWater(array));
+    int[] heights = {0, 1, 0, 2, 1, 0, 3, 1, 0, 1, 2};
+    System.out.println(trapWater(heights));
+    System.out.println(trapWaterOptimal(heights));
   }
 
-  private static int trapWater(int[] array) {
+  private static int trapWater(int[] heights) {
     int totalWater = 0;
-    for (int p = 0; p < array.length; p++) {
+    for (int p = 0; p < heights.length; p++) {
       int leftPointer = p;
       int rightPointer = p;
 
@@ -16,14 +17,14 @@ public class TrappingRainWater {
       int maxRight = 0;
 
       while (leftPointer >= 0) {
-        maxLeft = Math.max(maxLeft, array[leftPointer--]);
+        maxLeft = Math.max(maxLeft, heights[leftPointer--]);
       }
 
-      while (rightPointer < array.length) {
-        maxRight = Math.max(maxRight, array[rightPointer++]);
+      while (rightPointer < heights.length) {
+        maxRight = Math.max(maxRight, heights[rightPointer++]);
       }
 
-      int currentHeight = array[p];
+      int currentHeight = heights[p];
       int currentWater = Math.min(maxLeft, maxRight) - currentHeight;
 
       if (currentWater >= 0) {
@@ -31,5 +32,32 @@ public class TrappingRainWater {
       }
     }
     return totalWater;
+  }
+
+  private static int trapWaterOptimal(int[] heights) {
+    int total = 0;
+
+    int left = 0;
+    int right = heights.length - 1;
+    int maxLeft = 0;
+    int maxRight = 0;
+    while (left < right) {
+      if (heights[left] <= heights[right]) {
+        if (heights[left] > maxLeft) {
+          maxLeft = heights[left];
+        } else {
+          total += maxLeft - heights[left];
+        }
+        left++;
+      } else {
+        if (heights[right] > maxRight) {
+          maxRight = heights[right];
+        } else {
+          total += maxRight - heights[right];
+        }
+        right--;
+      }
+    }
+    return total;
   }
 }
