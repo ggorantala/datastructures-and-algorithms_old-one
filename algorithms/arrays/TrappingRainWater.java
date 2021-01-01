@@ -23,7 +23,8 @@ public class TrappingRainWater {
         maxRight = Math.max(maxRight, array[rightPointer++]);
       }
 
-      int currentWater = Math.min(maxLeft, maxRight) - array[p];
+      int currentHeight = array[p];
+      int currentWater = Math.min(maxLeft, maxRight) - currentHeight;
 
       if (currentWater >= 0) {
         totalWater += currentWater;
