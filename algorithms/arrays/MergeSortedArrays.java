@@ -8,6 +8,7 @@ public class MergeSortedArrays {
     int[] b = new int[]{1, 5, 8, 12, 14, 19};
 
     System.out.println(Arrays.toString(mergeArrays(a, b)));
+    System.out.println(Arrays.toString(mergeArraysOptimal(a, b)));
   }
 
   public static int[] mergeArrays(int[] myArray, int[] alicesArray) {
@@ -38,6 +39,24 @@ public class MergeSortedArrays {
       }
     }
 
+    return mergedArray;
+  }
+
+  private static int[] mergeArraysOptimal(int[] myArray, int[] alicesArray) {
+    int i = 0, j = 0, k = 0;
+
+    int[] mergedArray = new int[myArray.length + alicesArray.length];
+
+    while (k < mergedArray.length) {
+      boolean isMyArrayExhausted = i >= myArray.length;
+      boolean isAlicesArrayExhausted = j >= alicesArray.length;
+
+      if (!isMyArrayExhausted && (isAlicesArrayExhausted || (myArray[i] < alicesArray[j]))) {
+        mergedArray[k++] = myArray[i++];
+      } else {
+        mergedArray[k++] = alicesArray[j++];
+      }
+    }
     return mergedArray;
   }
 }
