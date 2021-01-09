@@ -4,8 +4,32 @@ public class AppleStocks {
   public static void main(String[] args) {
     int[] stockPrices = new int[]{10, 7, 5, 8, 11, 9};
 
+    System.out.println(getMaxProfitBruteForce(stockPrices));
     System.out.println(getMaxprofit(stockPrices));
 // returns 6 (buying for $5 and selling for $11)
+  }
+
+  public static int getMaxProfitBruteForce(int[] stockPrices) {
+    int maxProfit = 0;
+
+    // go through every price and time
+    for (int earlierTime = 0; earlierTime < stockPrices.length; earlierTime++) {
+      int earlierPrice = stockPrices[earlierTime];
+
+      // and go through all the LATER prices
+      for (int laterTime = earlierTime + 1; laterTime < stockPrices.length; laterTime++) {
+        int laterPrice = stockPrices[laterTime];
+
+        // see what our profit would be if we bought at the
+        // min price and sold at the current price
+        int potentialProfit = laterPrice - earlierPrice;
+
+        // update maxProfit if we can do better
+        maxProfit = Math.max(maxProfit, potentialProfit);
+      }
+    }
+
+    return maxProfit;
   }
 
   private static int getMaxprofit(int[] stockPrices) {
