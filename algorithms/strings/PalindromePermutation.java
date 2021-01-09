@@ -1,6 +1,8 @@
 package algorithms.strings;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class PalindromePermutation {
   public static void main(String[] args) {
@@ -27,4 +29,24 @@ public class PalindromePermutation {
     }
     return count <= 1;
   }
+
+  public static boolean hasPalindromePermutation(String theString) {
+
+    // track characters we've seen an odd number of times
+    Set<Character> unpairedCharacters = new HashSet<>();
+
+    for (int i = 0; i < theString.length(); i++) {
+      char ch = theString.charAt(i);
+      if (unpairedCharacters.contains(ch)) {
+        unpairedCharacters.remove(ch);
+      } else {
+        unpairedCharacters.add(ch);
+      }
+    }
+
+    // the string has a palindrome permutation if it
+    // has one or zero characters without a pair
+    return unpairedCharacters.size() <= 1;
+  }
+
 }
