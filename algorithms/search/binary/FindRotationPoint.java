@@ -15,10 +15,10 @@ public class FindRotationPoint {
       int guessIndex = floorIndex + ((ceilingIndex - floorIndex) / 2);
       if (words[floorIndex].compareTo(firstWord) >= 0) {
         //go right
-        floorIndex++;
+        floorIndex = guessIndex;
       } else {
         //go left
-        ceilingIndex--;
+        ceilingIndex = guessIndex;
       }
 
       if (floorIndex + 1 == ceilingIndex) {
