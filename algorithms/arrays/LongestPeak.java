@@ -14,7 +14,7 @@ public class LongestPeak {
       int currentPeak = 0;
       int a = i - 1;
       int b = i + 1;
-      while (i < array.length && (array[i] > array[a] || array[i] < array[b])) {
+      while (array[i] > array[a] || array[i] < array[b]) {
         if (array[i] > array[a]) {
           currentPeak++;
         }
