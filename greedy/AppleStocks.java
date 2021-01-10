@@ -5,6 +5,7 @@ public class AppleStocks {
     int[] stockPrices = new int[]{10, 7, 5, 8, 11, 9};
 
     System.out.println(getMaxProfitBruteForce(stockPrices));
+    System.out.println(getMaxProfit01(stockPrices));
     System.out.println(getMaxprofit(stockPrices));
 // returns 6 (buying for $5 and selling for $11)
   }
@@ -32,6 +33,19 @@ public class AppleStocks {
     return maxProfit;
   }
 
+  private static int getMaxProfit01(int[] stockPrices){
+    int min = stockPrices[0];
+    int profit = 0;
+
+    for(int i = 1; i< stockPrices.length; i++){
+      if(stockPrices[i] < min){
+        min = stockPrices[i];
+      }else{
+        profit = Math.max(profit, stockPrices[i] - min);
+      }
+    }
+    return profit;
+  }
   private static int getMaxprofit(int[] stockPrices) {
     int minPrice = stockPrices[0];
     int maxProfit = 0;

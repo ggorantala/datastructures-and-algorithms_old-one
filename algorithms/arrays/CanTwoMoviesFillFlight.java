@@ -4,6 +4,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class CanTwoMoviesFillFlight {
+  public static void main(String[] args) {
+    System.out.println(canTwoMoviesFillFlight(new int[]{1,2,3,4}, 4));
+  }
 
   public static boolean canTwoMoviesFillFlight(int[] movieLengths, int flightLength) {
 
