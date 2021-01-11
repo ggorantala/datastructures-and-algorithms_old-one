@@ -1,4 +1,4 @@
-package algorithms.strings;
+package algorithms.strings.palindrome;
 
 import java.util.HashMap;
 import java.util.HashSet;

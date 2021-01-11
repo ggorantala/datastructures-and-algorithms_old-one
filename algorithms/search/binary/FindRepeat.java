@@ -10,5 +10,6 @@ public class FindRepeat {
 
   private static int findRepeat(int[] numbers){
     // Do this later..  interviewcake
+    return -1;
   }
 }

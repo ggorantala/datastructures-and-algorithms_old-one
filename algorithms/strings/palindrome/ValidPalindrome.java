@@ -1,4 +1,4 @@
-package algorithms.strings;
+package algorithms.strings.palindrome;
 
 public class ValidPalindrome {
   public static void main(String[] args) {
