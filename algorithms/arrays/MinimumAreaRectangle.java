@@ -7,6 +7,8 @@ public class MinimumAreaRectangle {
   }
 
   private static int minAreaRectangle(int[][] points) {
+    int minArea = -1;
 
+    return minArea;
   }
 }
