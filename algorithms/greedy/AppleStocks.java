@@ -1,4 +1,4 @@
-package greedy;
+package algorithms.greedy;
 
 public class AppleStocks {
   public static void main(String[] args) {
