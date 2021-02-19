@@ -2,6 +2,7 @@ package algorithms.greedy;
 
 import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ClassPhotos {
   public static void main(String[] args) {
@@ -12,6 +13,25 @@ public class ClassPhotos {
 
   private static boolean classPhotos(ArrayList<Integer> redShirts, ArrayList<Integer> blueShirts){
 
-    return false;
+    Collections.sort(redShirts, Collections.reverseOrder());
+    Collections.sort(blueShirts, Collections.reverseOrder());
+
+    String colorInFirstRow = redShirts.get(0) < blueShirts.get(0) ? "Red" : "Blue";
+
+    for(int i = 0 ; i < redShirts.size(); i++){
+      int redShirtHeight = redShirts.get(i);
+      int blueShirtHeight = blueShirts.get(i);
+
+      if(colorInFirstRow.equals("Red")){
+        if(redShirtHeight >= blueShirtHeight){
+          return false;
+        }
+      }else {
+        if(redShirtHeight <= blueShirtHeight){
+          return false;
+        }
+      }
+    }
+    return true;
   }
 }
